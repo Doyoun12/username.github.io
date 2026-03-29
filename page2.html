@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DoyounKim</title>
+    <style type="text/css">
+        @font-face {
+        font-family: 'InfinitySans-RegularA1';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;}
+        #logo {position: absolute; top: 33px; left: 50px; font-family:'InfinitySans-RegularA1'; font-size: 38px;}
+        #menu1 {font-family:'InfinitySans-RegularA1'; text-align:right; color: #A6A6A6; text-decoration: none; 
+        font-size: 25px; position: absolute; top: 60px; left: 70.4%}
+        #menu2 {font-family:'InfinitySans-RegularA1'; color:#A9D18E; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 76.8%}
+        #menu3 {font-family:'InfinitySans-RegularA1'; color: #A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 84.2%}
+        #menu4 {font-family:'InfinitySans-RegularA1'; color:#A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 91.2%}
+        footer {font-family:'InfinitySans-RegularA1'; color:#BFBFBF; position: fixed; left: 50%; bottom: 20px}
+        hr {position: relative; top: 103px}
+        div {position: absolute; top: 150px; left: 30%; background-color:#F2F2F2; width: 35%; height: 5.5%;}
+        #scroll {font-family:'InfinitySans-RegularA1'; font-size: 17pt; color: #BFBFBF; 
+        position: absolute; top: 20%;}
+        table, tr, td {background-color:#F2F2F2; table-layout: fixed; border-collapse: collapse; 
+        border: 4.5px solid white;}
+        #table1 {width: 28%; height: 490px; position: absolute; left: 60%; top: 30%}
+        #table2 {width: 28%; height: 490px; position: absolute; left: 60%; top: 100%}
+        #table3 {width: 28%; height: 490px; position: absolute; left: 60%; top: 170%}
+        td {width: 20%; height: 30%}
+        #frame1 {background-color: #D9D9D9; position: absolute; top: 31%; left: 11%}
+        #frame2 {background-color: #D9D9D9; position: absolute; top: 101%; left: 11%}
+        #frame3 {background-color: #D9D9D9; position: absolute; top: 171%; left: 11%;}
+        #info, #info2, #info3 {font-family:'InfinitySans-RegularA1'; font-size: 12pt; color: #BFBFBF; }
+    </style>
+</head>
+<body>
+    <!--안내 문구-->
+    <span id="info" style="position: absolute; left: 11%; top: 27.5%; visibility: visible;">
+    우측 이미지 클릭하여 자세히 보기</span>
+    <span id="info2" style="position: absolute; left: 11%; top: 97.5%; visibility: visible;">
+    우측 이미지 클릭하여 자세히 보기</span>
+    <span id="info3" style="position: absolute; left: 11%; top: 167.5%; visibility: visible;">
+    우측 이미지 클릭하여 자세히 보기</span>
+    <script type="text/javascript">
+        function Infos(id) {
+            var Ainfo = document.getElementById(id);
+        
+            if (Ainfo.style.visibility == "visible")
+                Ainfo.style.visibility = "hidden";
+        }
+    </script>
+    <span id="logo">DoYunKim</span>
+    <a href="index.html" id="menu1">Profile</a><a href="page2.html" id="menu2">Portfolio</a>
+    <a href="page3.html" id="menu3">Contact</a><a href="page4.html" id="menu4">Stories</a><hr>
+    <div>
+        <pre>
+            <!--이동바-->
+            <a href="#frame1"><span id="scroll" style="position: absolute; left: 10%">VIDEO</span></a>
+            <a href="#frame2"><span id="scroll" style="position: absolute; left: 38%">Paintings</span></a>
+            <a href="#frame3"><span id="scroll" style="position: absolute; left: 70%">IMC Projects</span></a>
+            <a href="page6.html"><span id="scroll" style="position: absolute; left: 110%">Beta</span></a>
+        </pre>
+    </div>
+    <table id="table1" onclick="Infos('info');">
+        <tr>
+            <td><a href="https://www.youtube.com/embed/iDnebCbCDNQ?si=W-QsWx7Ge_2FV-ds" target="vid1">
+                <embed src="images\pre1.png" width=100%></embed></a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td>
+        </tr>
+    </table>
+    <iframe id="frame1" src="" name="vid1" width="650" height="465"></iframe>
+    <!--스크롤-->
+    <table id="table2" onclick="Infos('info2');">
+        <tr>
+            <td><a href="images\img2.gif" target="vid2">
+                <embed src="images\pre2.png" width=100% height="170px"></embed></a></td>
+            <td><a href="images\img1.png" width="200px" height="300px" target="vid2">
+                <embed src="images\img1.png" width=100% height=170px></embed></a></td>
+        </tr>
+        <tr>
+            <td><a href="images\img3.png" width="200px" height="300px" target="vid2">
+                <embed src="images\img3.png" width=100% height=150px></embed></a></td>
+            <td><a href="images\img4.jpg" width="200px" height="300px" target="vid2">
+                <embed src="images\img4.jpg" width=100% height=150px></embed></a></td>
+        </tr>
+        <tr>
+            <td></td><td></td>
+        </tr>
+    </table>
+    <iframe id="frame2" src="" name="vid2" width="650" height="465"></iframe>
+    <!--스크롤-->
+    <table id="table3" onclick="Infos('info3');">
+        <tr>
+            <td><a href="images\IMC3.png" target="vid3">
+                <embed src="images\IMC3.png" width=100%></embed></a></td>
+            <td><a href="images\IMC1.png" target="vid3">
+                <embed src="images\IMC1.png" width=100%></embed></a></td>
+        </tr>
+        <tr>
+            <td><a href="images\IMC2.png" target="vid3">
+                <embed src="images\IMC2.png" width=100%></embed></a></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td>
+        </tr>
+    </table>
+    <iframe id="frame3" src="" name="vid3" width="650" height="465"></iframe>
+    <br>
+    <table style="position: absolute; bottom: -140%"><tr><td></td></tr><tr><td></td></tr></table>
+    <br>
+    <footer>@DoYoun</footer> 
+</body>
+</html>

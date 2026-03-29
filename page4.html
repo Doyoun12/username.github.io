@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DoyounKim</title>
+    <style type="text/css">
+@font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BBTreeGB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        #logo {position: absolute; top: 33px; left: 50px; font-family:'InfinitySans-RegularA1'; font-size: 38px;}
+        #menu1 {font-family:'InfinitySans-RegularA1'; text-align:right; color: #A6A6A6; text-decoration: none; 
+        font-size: 25px; position: absolute; top: 60px; left: 69.8%}
+        #menu2 {font-family:'InfinitySans-RegularA1'; color: #A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 76.2%}
+        #menu3 {font-family:'InfinitySans-RegularA1'; color: #A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 83.5%}
+        #menu4 {font-family:'InfinitySans-RegularA1'; color:#A9D18E; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 90.5%}
+        footer {font-family:'InfinitySans-RegularA1'; color:#BFBFBF; position: fixed; left: 50%; bottom: 20px}
+        hr {position: relative; top: 103px}
+        div {overflow: hidden; font-family: 'InfinitySans-RegularA1'; font-size: 16pt; padding: 15px;
+        position: absolute; left: 61.5%}
+        #format {background-color: #D9D9D9; top: 22%; width: 30%; height: 11%}
+        #content {background-color: #D9D9D9; top: 40%; width: 30%; height: 20%;}
+        #topic {background-color: #D9D9D9; top: 67%; width: 30%; height: 11%}
+        #button {background-color: #D9D9D9; font-family:'InfinitySans-RegularA1'; font-size: 15pt; padding: 5px;}
+        p {margin-left: 90px; font-family:'BBTreeGB'; font-size: 20pt; text-align:left; line-height: 1.15}
+    </style>
+</head>
+<body id="back">
+    <span id="logo">DoYunKim</span>
+    <a href="index.html" id="menu1">Profile</a><a href="page2.html" id="menu2">Portfolio</a>
+    <a href="page3.html" id="menu3">Contact</a><a href="page4.html" id="menu4">Stories</a><hr>
+    <form method="get" action="form_app.js">
+    <div id="format">
+        <span style="margin-left: 9px">글 형식:<br><br>
+            <input id="form1" type="radio" name="format" value="essay" style="margin-left: 10px">Essay
+            <input id="form2" type="radio" name="format" value="diary" style="margin-left: 30px">Diary
+        </span>
+    </div>
+    <div id="content" style="overflow:auto">
+        <span style="margin-left: 9px">내용:<br><br>
+            <textarea name="content" rows="5" cols="66" 
+            style="margin-left: 10px; border: 0; font-family:'InfinitySans-RegularA1'; font-size: 17px"/></textarea>
+        </span>
+    </div>
+    <div id="topic" style="overflow:auto;">
+        <span style="margin-left: 9px;">주제:<br><br>
+            <input type="checkbox" name="books" value="brand" style="margin-left: 10px"/>#Brand Analysis
+            <input type="checkbox" name="books" value="class" style="margin-left: 20px"/>#Class Summary
+            <input type="checkbox" name="books" value="note" style="margin-left: 20px"/>#Note
+        </span>
+    </div>
+    <span>
+        <input style="border: 0; width: 15%; height: 5%; position: absolute; bottom: 10%; left: 61.5%"
+        id="button" type="submit" value="전송"/>
+    </span>
+    <span>
+        <input style="border: 0; width: 15%; height: 5%; position: absolute; bottom: 10%; left: 78%" 
+        id="button" type="reset" value="초기화"/>
+    </span>
+    <p>
+        <br><br><br>
+        <span id="article_title" style="position: absolute; top: 19.5%">Short Articles</span>
+        <br><br><br>
+        <span style="color: #A6A6A6; font-size: 19pt">#Brand Analysis #Diary</span>
+        <br><br>
+        <span id="article" style="font-size: 19pt">
+            통합미디어전략 수업을 통해 OTT 시장 분석 진행.<br>
+            해외 OTT 서비스는 넷플릭스, 아마존, 디즈니 플러스<br>가 우세하다. 국내 OTT 서비스는 넷플릭스, 웨이브,
+            <br>티빙 순으로 점유율이 높다.
+        </span> 
+    </p>
+    </form>
+    <footer>@DoYoun</footer>
+    <!--바탕색 바꾸기-->
+    <script type = "text/javascript">
+    var backcolor = "white";
+    function change() {
+        var bodytag = document.getElementById("back");
+        var contents = document.getElementById("article");
+        var Atitle = document.getElementById("article_title");
+        var Alogo = document.getElementById("logo");
+
+        if (backcolor=="white") {
+            bodytag.style.backgroundColor = "black";
+            contents.style.color = "white";
+            Atitle.style.color = "#A9D18E";
+            Alogo.style.color = "white";
+            backcolor = "black";
+        }
+        else if (backcolor=="black") {
+            bodytag.style.backgroundColor = "white";
+            backcolor = "white";
+            contents.style.color = "black";
+            Atitle.style.color = "black";
+            Alogo.style.color = "black";
+        }
+    }
+    </script>
+    <input style="border: 0; width: 8%; height: 4%; position: absolute; top: 15%; left: 85%" 
+    id="button" type="button" value="모드 전환" onclick="change()"/>
+</body>
+</html>

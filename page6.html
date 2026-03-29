@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DoyounKim</title>
+    <style type="text/css">
+        @font-face {
+        font-family: 'InfinitySans-RegularA1';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;}
+        #logo {position: absolute; top: 33px; left: 50px; font-family:'InfinitySans-RegularA1'; font-size: 38px;}
+        #menu1 {font-family:'InfinitySans-RegularA1'; text-align:right; color: #A6A6A6; text-decoration: none; 
+        font-size: 25px; position: absolute; top: 60px; left: 70.4%}
+        #menu2 {font-family:'InfinitySans-RegularA1'; color:#A9D18E; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 76.8%}
+        #menu3 {font-family:'InfinitySans-RegularA1'; color: #A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 84.2%}
+        #menu4 {font-family:'InfinitySans-RegularA1'; color:#A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 91.2%}
+        footer {font-family:'InfinitySans-RegularA1'; color:#BFBFBF; position: fixed; left: 50%; bottom: 20px}
+        hr {position: relative; top: 103px}
+        div {position: absolute; top: 150px; left: 30%; background-color:#F2F2F2; width: 35%; height: 5.5%;}
+        #Aextract, #howto, #re {background-color: #D9D9D9; font-family:'InfinitySans-RegularA1'; font-size: 15pt; padding: 5px;}
+        #what {font-family:'InfinitySans-RegularA1'; font-size: 16pt;}
+        #mouse {font-family:'InfinitySans-RegularA1'; font-size: 12pt; color: #cecece;}
+  </style>
+  <body>
+    <span id="logo">DoYunKim</span>
+    <a href="index.html" id="menu1">Profile</a><a href="page2.html" id="menu2">Portfolio</a>
+    <a href="page3.html" id="menu3">Contact</a><a href="page4.html" id="menu4">Stories</a><hr>
+    <!--아몬드-->
+    <img id="말차" src = "images/malcha.png" style="position: absolute; top: 300px; left: 6%;
+    " width="3.5%" draggable="true" ondragstart="drag(event)">
+    <img id="마늘빵" src = "images/galric.png" style="position: absolute; top: 300px; left: 11%;
+    " width="3.5%" draggable="true" ondragstart="drag(event)">
+    <img id="민초" src = "images/mincho.png" style="position: absolute; top: 300px; left: 16%;
+     " width="3.5%" draggable="true" ondragstart="drag(event)">
+    <img id="떡볶이" src = "images/tteok.png" style="position: absolute; top: 300px; left: 21%;
+    " width="3.5%" draggable="true" ondragstart="drag(event)">
+    <img id="흑임자" src = "images/heuk.png" style="position: absolute; top: 300px; left: 26%;
+    " width="3.5%" draggable="true" ondragstart="drag(event)">
+    <!--박스-->
+    <img id="box1" src = "images/closed.png" style="position: absolute; top: 380px; left: 9%" width="18%" 
+    ondragover="allowDrop(event)" ondrop="drop1(event)">
+    
+    <script type = "text/javascript">
+        var Aextract = document.getElementById("Aextract");
+        var box1 = document.getElementById("box1");
+        var malcha = document.getElementById("말차");
+        var garlic = document.getElementById("마늘빵");
+        var mincho = document.getElementById("민초");
+        var tteok = document.getElementById("떡볶이");
+        var heuk = document.getElementById("흑임자");
+        var num = 0;
+        var arr = new Array('한식', '우동', '짜장면', '짬뽕', '마라탕', '햄버거', '피자', '파스타', '삼겹살', '초밥');
+
+        function howto() { // 방법
+            alert("아몬드를 골라 상자로 드래그 할 수 있습니다.\n원하는 만큼 아몬드를 상자에 넣은 후 추출 버튼을 눌러주세요.\n아몬드를 얼마나 고르느냐에 따라 추천메뉴가 달라집니다.");
+        }
+
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+    function drag(e) {
+        e.dataTransfer.setData("text", e.target.id);
+    }
+    function drop1(e) {
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+        e.target.appendChild(document.getElementById(data));
+        box1.src="images/box.png";
+        num++;
+    }
+    function extract() {
+        do {
+            var num1 = Math.floor(Math.random()*9);
+        } while (num1<num)
+        var arr_slice = arr.slice(num, num1+1);
+        var number = Math.floor(Math.random()*(arr_slice.length-1));
+        var menu = arr_slice[number];
+        alert("오늘의 식사는"+" "+menu);
+    }
+
+    </script>
+    
+    <!--물고기-->
+    <img id="fish" src="images/fish.png" style="position: absolute; top: 350px; right: 9%; z-index: 3;
+    " width="3.5%" onmouseover="fishmove()">
+    <img id="wanted" src="images/jal.png" style="position: absolute; top: 50%; right: 7%; z-index: 2;">
+    <img id="bubble" src="images/bubble.png" style="position: absolute; top: 450px; right: 90px; z-index: 1;">
+
+    <script type="text/javascript">
+    var fish = document.getElementById("fish");
+    var bubble = document.getElementById("bubble");
+
+    var pishes = function pish(tops) {
+        this.src="images/fish.png";
+        this.style.top = paresInt(tops)+"px";
+    }
+    pishes(100);
+    pishes(150);
+
+    function fishmove() {
+        e = window.event;
+        var X = e.clientX;
+        var Y = e.clientY;
+        fish.style.left = X-60+"px";
+        fish.style.top = Y-(-10)+"px";
+    }
+
+    function bubblemove() {
+        bubble.num = Math.floor((Math.random()*30)+1);
+        bubble.style.top = parseInt(bubble.style.top)-bubble.num+"px";
+        move = setTimeout(bubblemove, 80);
+    }
+
+    function stop() {
+        clearTimeout(move);
+        bubble.style.top = 450+"px";
+    }
+
+    </script>
+    
+    <span id="what" style= "position: absolute; top: 18%; left: 4%" >간단한 식사 추천 미니게임</span>
+    <input style="border: 0; width: 8%; height: 4%; position: absolute; top: 23%; left: 4%" 
+    id="howto" type="button" value="방법" onclick="howto()"/>
+    <input style="border: 0; width: 8%; height: 4%; position: absolute; top: 23%; left: 14%" 
+    id="Aextract" type="button" value="추출" onclick="extract()"/>
+    <input style="border: 0; width: 8%; height: 4%; position: absolute; top: 23%; left: 24%" 
+    id="Aextract" type="button" value="다시하기" onClick="window.location.reload()"/>
+    <br>
+
+    <span id="what" style= "position: absolute; top: 18%; right: 17%" >디지털 아쿠아리움</span>
+    <span id="mouse" style= "position: absolute; top: 28%; right: 13%">물고기에 마우스를 가져다대 보세요.</span>
+    <input style="border: 0; width: 8%; height: 4%; position: absolute; top: 23%; right: 7%" 
+    id="Aextract" type="button" value="초기화" onClick="stop()"/>
+    <input style="border: 0; width: 8%; height: 4%; position: absolute; top: 23%; right: 17%" 
+    id="Aextract" type="button" value="시작" onClick="bubblemove()"/>
+    <footer>@DoYoun</footer> 
+</body>
+</html>

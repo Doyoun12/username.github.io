@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DoyounKim</title>
+    <style type="text/css">
+        @font-face {
+        font-family: 'InfinitySans-RegularA1';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;}
+        #logo {position: absolute; top: 33px; left: 50px; font-family:'InfinitySans-RegularA1'; font-size: 38px;}
+        #menu1 {font-family:'InfinitySans-RegularA1'; text-align:right; color: #A6A6A6; text-decoration: none; 
+        font-size: 25px; position: absolute; top: 60px; left: 70.4%}
+        #menu2 {font-family:'InfinitySans-RegularA1'; color:#A9D18E; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 76.8%}
+        #menu3 {font-family:'InfinitySans-RegularA1'; color: #A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 84.2%}
+        #menu4 {font-family:'InfinitySans-RegularA1'; color:#A6A6A6; text-decoration: none; text-align:right; 
+        font-size: 25px; position: absolute; top: 60px; left: 91.2%}
+        footer {font-family:'InfinitySans-RegularA1'; color:#BFBFBF; position: fixed; left: 50%; bottom: 20px}
+        hr {position: relative; top: 103px}
+        div {position: absolute; top: 150px; left: 30%; background-color:#F2F2F2; width: 35%; height: 5.5%;}
+        #start, #howto {background-color: #D9D9D9; font-family:'InfinitySans-RegularA1'; font-size: 15pt; padding: 5px;}
+  </style>
+<body>
+    <span id="logo">DoYunKim</span>
+    <a href="index.html" id="menu1">Profile</a><a href="page2.html" id="menu2">Portfolio</a>
+    <a href="page3.html" id="menu3">Contact</a><a href="page4.html" id="menu4">Stories</a><hr>
+    <!--아몬드-->
+    <img id="말차" src = "말차.png" style="position: relative; top: 250px; left: 335px;
+    visibility: hidden; z-index: 3;" width="3.5%">
+    <img id="마늘빵" src = "마늘빵.png" style="position: relative; top: 250px; left: 335px;
+    visibility: hidden; z-index: 3;" width="3.5%">
+    <img id="민초" src = "민초.png" style="position: relative; top: 250px; left: 335px;
+    visibility: hidden; z-index: 3;" width="3.5%">
+    <img id="떡볶이" src = "떡볶이.png" style="position: relative; top: 250px; left: 335px;
+    visibility: hidden; z-index: 3;" width="3.5%">
+    <img id="흑임자" src = "흑임자.png" style="position: relative; top: 250px; left: 335px;
+    visibility: hidden; z-index: 3;" width="3.5%">
+    <!--박스-->
+    <img id="box1" src = "박스닫힘.png" style="position: relative; top: 320px; left: -1%; z-index: 4;" width="18%" 
+    ondragover="allowDrop(event)" ondrop="drop1(event)">
+    <img id="box2" src = "박스닫힘.png" style="position: relative; top: 320px; left: 200px; z-index: 4;" width="18%"
+    ondragover="allowDrop(event)" ondrop="drop2(event)">
+    <img id="box3" src = "박스닫힘.png" style="position: relative; top: 320px; left: 390px; z-index: 4;" width="18%"
+    ondragover="allowDrop(event)" ondrop="drop3(event)">
+    <img id="wanted" src="wanted.png" style="position: relative; top: 190px; left: 180px; z-index: 4;" width="20%"
+    ondragover="allowDrop(event)" ondrop="drop(event)">
+    <img id="key" src = "key.png" style="position: relative; top: 220px; z-index: 1;" width="18%"
+    draggable="true" ondragstart="drag(event)">
+
+   <script type = "text/javascript">
+    var malcha = document.getElementById("말차");
+    var garlic = document.getElementById("마늘빵");
+    var mincho = document.getElementById("민초");
+    var tteok = document.getElementById("떡볶이");
+    var heuk = document.getElementById("흑임자");
+    var box1 = document.getElementById("box1");
+    var box2 = document.getElementById("box2");
+    var box3 = document.getElementById("box3");
+    var open = document.getElementById("open");
+    var almond = new Array(malcha, garlic, mincho, tteok, heuk);
+
+    // 아몬드 게임
+    var num = Math.floor(Math.random()*4);
+    almond[num].style.visibility="visible";
+    
+    
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+    function drag(e) {
+        e.dataTransfer.setData("text", e.target.id);
+    }
+    function drop1(e) {
+        var number = Math.floor(Math.random()*4);
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+        e.target.appendChild(document.getElementById(data));
+        box1.src="박스.png";
+        if (num==number) {
+            alert("성공!");
+        }
+        else {
+            almond[number].style="position: absolute; top: 320px; left: 170px;";
+        }
+        box1.ondrop="null";
+    }
+    function drop2(e) {
+        var number = Math.floor(Math.random()*4);
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+        box2.src="박스.png";
+        if (num==number) {
+            alert("성공!");
+        }
+        else {
+            almond[number].style="position: absolute; top: 320px; left: 330px;";
+        }
+        box2.ondrop="null";
+    }
+    function drop3(e) {
+        var number = Math.floor(Math.random()*4);
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+        box3.src="박스.png";
+        if (num==number) {
+            alert("성공!");
+        }
+        else {
+            almond[number].style="position: absolute; top: 320px; left: 170px;";
+        }
+        box3.ondrop="null";
+    }
+
+    /*
+    function almonds() { // 시작/정지
+        var start = document.getElementById("start");
+        if (start.value=="시작") {
+            start.value="정지";
+            setTimeout(shows, 3000);
+        }
+        else {
+            start.value="시작";
+            
+        }
+    }
+    
+    function shows() { // 아몬드 번갈아 등장
+        if (number>4) {
+            number = 0;
+        }
+        almond[number].style.visibility="visible";
+        number++;
+    }
+    */
+    function howto() { // 방법
+        alert("열쇠를 상자로 드래그하여 상자를 열 수 있습니다.\n상자 속 아몬드가 그림 속 아몬드와 동일하면 성공입니다.");
+    }
+    </script>
+    <input style="border: 0; width: 8%; height: 4%; position: absolute; top: 23%; left: 5%" 
+    id="howto" type="button" value="방법" onclick="howto()"/>
+ 
+    <br>
+    <footer>@DoYoun</footer> 
+</body>
+</html>
